@@ -1,0 +1,7 @@
+backend/backend/settings.py
+
+__pycache__/
+
+node_modules/
+
+.idea/
