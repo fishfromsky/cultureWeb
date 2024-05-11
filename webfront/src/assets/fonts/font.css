@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'DongfangDakai';
+    src: url('./AlimamaDongFangDaKai-Regular.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'PuhuiTi';
+    src: url('./Alibaba_PuHuiTi_Regular.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
