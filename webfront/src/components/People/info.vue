@@ -1,9 +1,9 @@
 <template>
     <div class="info-body">
-        <div class="back" @click="goBack"></div>
         <el-row>
             <el-col :span="20">
-                <Basic :infoBody="infoBody"></Basic>
+                <Basic v-if="selected == 0" :infoBody="infoBody"></Basic>
+                <Zuopin v-if="selected == 1"></Zuopin>
             </el-col>
             <el-col :span="4">
                 <div class="nav">
@@ -28,10 +28,12 @@
 
 <script>
 import Basic from './components/basic.vue'
+import Zuopin from './components/zuopin.vue'
 export default{
     name: 'info',
     components: {
-        Basic
+        Basic,
+        Zuopin
     },
     props: {
         infoid: {
@@ -46,9 +48,6 @@ export default{
         }
     },
     methods: {
-        goBack(){
-            this.$emit('goBack', 0);
-        },
         selectNav(val){
             if (val != this.selected){
                 this.selected = val
@@ -71,19 +70,6 @@ export default{
 </script>
 
 <style scoped>
-.back{
-    width: 4vh;
-    height: 4vh;
-    position: absolute;
-    top: 14vh;
-    left: 4%;
-    background-image: url('../../assets/back.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    cursor: pointer;
-    z-index: 1000;
-}
 .nav{
     min-width: 12%;
     height: 30vh;

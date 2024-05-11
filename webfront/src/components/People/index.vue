@@ -1,7 +1,8 @@
 <template>
     <div class="people-body">
+        <div class="back" @click="go_back"></div>
         <Main v-if="selected == 0" @showinfo="handle_info"></Main>
-        <Info v-if="selected == 1" @goBack="go_back" :infoid="people_id"></Info>
+        <Info v-if="selected == 1" :infoid="people_id"></Info>
     </div>
 </template>
 
@@ -36,6 +37,19 @@ export default {
 </script>
 
 <style scoped>
+.back{
+    width: 4vh;
+    height: 4vh;
+    position: absolute;
+    top: 14vh;
+    left: 4%;
+    background-image: url('../../assets/back.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+    z-index: 1000;
+}
 .people-body{
     width: 100%;
     min-height: 90vh;
