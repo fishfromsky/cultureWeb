@@ -7,3 +7,6 @@ class News(models.Model):
     category = models.IntegerField(default=0)
     sub_title = models.CharField(max_length=100, default='')
     news_time = models.DateField(auto_now_add=True)
+    img = models.CharField(max_length=255, default='')
+    source = models.CharField(max_length=255, default='')
+    sub_content = models.TextField(default='')

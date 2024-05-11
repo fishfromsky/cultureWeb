@@ -7,6 +7,7 @@ from .views_package.comment import comment_views
 from .views_package.news import news_view
 from .views_package.buy import buy_views
 from .views_package.show import show_views
+from .views_package.people import people_views
 
 
 @require_http_methods(['POST'])

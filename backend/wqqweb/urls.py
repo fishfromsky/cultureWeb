@@ -26,6 +26,7 @@ urlpatterns = [
 
     url('get_news', views.news_view.get_news),  # 获取新闻
     url('get_specific_news', views.news_view.get_specific_news),  # 获取某一条新闻
+    url('get_show_news', views.news_view.get_show_news),  # 获取展示新闻
 
     url('get_goods_number', views.buy_views.get_total_goods_num),  # 获取商品总数
     url('get_goods_categories', views.buy_views.get_categories),  # 获取商品种类
@@ -39,5 +40,9 @@ urlpatterns = [
     url('get_wen_comment', views.show_views.get_wen_comment),  # 获取“纹”评论
     url('add_wen_comment', views.show_views.add_wen_comment),  # 添加“纹"评论
 
-    url('get_material_detail', views.show_views.get_material_life_detail),  # 获取“物”的器下的细节
+    url('get_material_detail', views.show_views.get_material_life_detail),  # 获取“物”
+
+    url('get_all_workman', views.people_views.get_all_workman),  # 获取所有工匠信息
+    url('get_workman_info', views.people_views.get_specific_workman),  # 获取“匠”具体信息
+    url('get_shop_info', views.people_views.get_shop_info),   # 获取“匠”具体信息
 ]

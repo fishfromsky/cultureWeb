@@ -22,3 +22,23 @@ def get_specific_news(request):
     news = News.objects.get(id=id)
     response['news'] = to_dict(news)
     return JsonResponse(response)
+
+
+@require_http_methods(['GET'])
+def get_show_news(request):
+    response = {'code': 0, 'message': 'success'}
+    id = int(request.GET.get('id'))
+    response['data'] = []
+    if id == 0:
+        news = News.objects.filter(sub_title='比赛')
+    elif id == 1:
+        news = News.objects.filter(sub_title='展览')
+    elif id == 2:
+        news = News.objects.filter(sub_title='活动')
+    else:
+        news = News.objects.filter(sub_title='培训')
+
+    for item in news:
+        response['data'].append(to_dict(item))
+
+    return JsonResponse(response)
