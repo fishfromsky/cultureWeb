@@ -2,8 +2,9 @@
     <div class="info-body">
         <el-row>
             <el-col :span="20">
-                <Basic v-if="selected == 0" :infoBody="infoBody"></Basic>
-                <Zuopin v-if="selected == 1"></Zuopin>
+                <Basic v-if="selected == 0" :infoBody="infoBody" :shopInfo="shopInfo"></Basic>
+                <Zuopin v-if="selected == 1" :person_id="infoBody.id"></Zuopin>
+                <Interview v-if="selected == 2" :person_id="infoBody.id" :person_name="infoBody"></Interview>
             </el-col>
             <el-col :span="4">
                 <div class="nav">
@@ -29,11 +30,13 @@
 <script>
 import Basic from './components/basic.vue'
 import Zuopin from './components/zuopin.vue'
+import Interview from './components/interview.vue'
 export default{
     name: 'info',
     components: {
         Basic,
-        Zuopin
+        Zuopin,
+        Interview
     },
     props: {
         infoid: {
@@ -44,6 +47,7 @@ export default{
     data(){
         return{
             infoBody: {},
+            shopInfo: {},
             selected: 0
         }
     },
@@ -64,6 +68,16 @@ export default{
             method: 'GET'
         }).then(res=>{
             this.infoBody = res.data.data
+            let shop_params = {
+                'id': this.infoid
+            }
+            this.$http({
+                url: 'api/get_shop_info',
+                params: shop_params,
+                method: 'GET'
+            }).then(res=>{
+                this.shopInfo = res.data.data
+            }).catch(res=>{this.$message.error(res)})
         }).catch(err=>{this.$message.error(err)})
     }
 }

@@ -45,4 +45,6 @@ urlpatterns = [
     url('get_all_workman', views.people_views.get_all_workman),  # 获取所有工匠信息
     url('get_workman_info', views.people_views.get_specific_workman),  # 获取“匠”具体信息
     url('get_shop_info', views.people_views.get_shop_info),   # 获取“匠”具体信息
+    url('get_workman_zuopin', views.people_views.get_workman_zuopin),  # 获取“匠”作品
+    url('get_interview_content', views.people_views.get_interview_content),  # 获取采访内弄
 ]

@@ -81,8 +81,11 @@ export default{
     props: {
         infoBody: {
             type: Object,
-            required: true,
-            default: null
+            required: true
+        },
+        shopInfo: {
+            type: Object,
+            required: true
         }
     },
     data(){
@@ -91,19 +94,7 @@ export default{
         }
     },
     watch:{
-        infoBody(val){
-            let that = this
-            let params = {
-                'id': val.id
-            }
-            this.$http({
-                url: 'api/get_shop_info',
-                params: params,
-                method: 'GET'
-            }).then(res=>{
-                that.shopInfo = res.data.data
-            }).catch(res=>{this.$message.error(res)})
-        }
+        
     },
 }
 </script>
