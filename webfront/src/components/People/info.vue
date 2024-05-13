@@ -4,7 +4,7 @@
             <el-col :span="20">
                 <Basic v-if="selected == 0" :infoBody="infoBody" :shopInfo="shopInfo"></Basic>
                 <Zuopin v-if="selected == 1" :person_id="infoBody.id"></Zuopin>
-                <Interview v-if="selected == 2" :person_id="infoBody.id" :person_name="infoBody"></Interview>
+                <Interview v-if="selected == 2" :person_id="infoBody.id" :person_name="infoBody.name"></Interview>
             </el-col>
             <el-col :span="4">
                 <div class="nav">
