@@ -2,9 +2,9 @@
     <div class="detail-body">
         <el-row :gutter="40">
             <el-col :span="13">
-                <el-carousel height="60vh" class="carousel" indicator-position="outside">
-                    <el-carousel-item v-for="item in card_item" :key="item">
-                        <img :src="item" style="width: 100%; height: 100%;">
+                <el-carousel height="60vh" :autoplay="false" class="carousel" indicator-position="outside" @change="changeCard">
+                    <el-carousel-item v-for="(item, idx) in card_item" :key="idx">
+                        <img :src="item.img" style="width: 100%; height: 100%;">
                     </el-carousel-item>
                 </el-carousel>
             </el-col>
@@ -28,11 +28,20 @@ export default{
             content: ''
         }
     },
+    methods: {
+        changeCard(val){
+            this.title = this.card_item[val].title
+            this.content = this.card_item[val].content
+        }
+    },
     created(){
         let that = this
         let id = this.$route.query.id
+        let category = this.$route.query.category
+        console.log(category)
         let params = {
-            'id': id
+            'id': id,
+            'category': category
         }
         this.$http({
             url: 'api/get_material_detail',
@@ -41,9 +50,9 @@ export default{
         }).then(res=>{
             let code = res.data.code
             if (code != 0){
-                that.card_item = res.data.data.img
-                that.title = res.data.data.title
-                that.content = res.data.data.content
+                that.card_item = res.data.data
+                that.title = that.card_item[0].title
+                that.content = that.card_item[0].content
             }
         }).catch(e=>{this.$message.error(e)})
     }
@@ -54,7 +63,7 @@ export default{
 .detail-body{
     width: 100%;
     height: 90vh;
-    background-color: #0c1429;
+    background-color: #131e3a;
     box-sizing: border-box;
     padding: 40px;
     color: #fff;

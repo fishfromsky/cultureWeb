@@ -6,6 +6,6 @@ node_modules/
 
 .idea/
 
-backend/wqqweb/static/img/
+backend/wqqweb/static/
 
 webfront/dist/

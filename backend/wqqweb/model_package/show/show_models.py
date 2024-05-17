@@ -33,3 +33,12 @@ class Material_Detail(models.Model):
     type_id = models.IntegerField(default=0)
     title = models.CharField(max_length=255, default='')
     content = models.TextField(default='')
+    main_category = models.CharField(max_length=255, default='')
+
+
+class history(models.Model):
+    img = models.CharField(max_length=255, default='')
+    describe = models.TextField(default='')
+    title = models.CharField(max_length=255, default='')
+    flag = models.CharField(max_length=255, default='')
+    type_id = models.IntegerField(default=0)

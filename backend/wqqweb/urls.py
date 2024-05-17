@@ -42,6 +42,8 @@ urlpatterns = [
 
     url('get_material_detail', views.show_views.get_material_life_detail),  # 获取“物”
 
+    url('get_history_info', views.show_views.get_history_info),  # 获取“史”信息
+
     url('get_all_workman', views.people_views.get_all_workman),  # 获取所有工匠信息
     url('get_workman_info', views.people_views.get_specific_workman),  # 获取“匠”具体信息
     url('get_shop_info', views.people_views.get_shop_info),   # 获取“匠”具体信息

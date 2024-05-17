@@ -6,6 +6,7 @@
                 <Wu v-if="navigator == 1"></Wu>
                 <Detail v-if="navigator == 2"></Detail>
                 <Shi v-if="navigator == 3"></Shi>
+                <Chang v-if="navigator == 4"></Chang>
             </el-col>
             <el-col :span="3">
                 <Navigate @navigator="handle_navigate"></Navigate>
@@ -20,6 +21,7 @@ import Detail from './components/detail.vue'
 import Wen from './components/wen.vue'
 import Wu from './components/wu/index.vue'
 import Shi from './components/shi/index.vue'
+import Chang from './components/change/index.vue'
 export default {
     name: 'Show',
     components: {
@@ -27,7 +29,8 @@ export default {
         Detail,
         Wen,
         Wu,
-        Shi
+        Shi,
+        Chang
     },
     data(){
         return{

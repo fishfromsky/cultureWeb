@@ -1,6 +1,6 @@
 <template>
-    <div>
-
+    <div class="man-body">
+        <div class="img-box"></div>
     </div>
 </template>
 
@@ -16,4 +16,12 @@ export default{
 </script>
 
 <style scoped>
+.img-box{
+    width: 100%;
+    height: 80vh;
+    background-image: url('../../../assets/Wu/man.png');
+    background-position: -24vh center;
+    background-repeat: no-repeat;
+    background-size: 110% 110%;
+}
 </style>

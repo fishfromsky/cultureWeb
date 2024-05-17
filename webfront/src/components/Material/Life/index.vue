@@ -46,7 +46,7 @@
         </div>
         <div class="title position12" @click="toDetail(11)">
             <div class="point" :class="[selected == 0? 'background-bg-active': 'background-bg-no-active']"></div>
-            <div class="text" :class="[selected == 0? 'text-active': 'text-no-active']">银耳花</div>
+            <div class="text" :class="[selected == 0? 'text-active': 'text-no-active']">银耳挖</div>
         </div>
     </div>
 </template>
@@ -61,7 +61,7 @@ export default{
     },
     methods: {
         toDetail(val){
-            this.$router.push({path: '/material/detail3', query: {id: val}, replace: true})
+            this.$router.push({path: '/material/detail', query: {id: val, category: '2'}, replace: true})
         }
     }
 }

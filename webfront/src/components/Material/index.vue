@@ -15,16 +15,22 @@
                 <div class="text" style="margin-left: 40px;" :class="[selected == 2? 'change-color': 'original-color']">生活用具</div>
             </div>
         </div>
+        <Zongjiao v-if="selected == 0"></Zongjiao>
+        <Weapon v-if="selected == 1"></Weapon>
         <Life v-if="selected == 2"></Life>
     </div>
 </template>
 
 <script>
 import Life from './Life/index.vue'
+import Zongjiao from './Zongjiao/index.vue'
+import Weapon from './Weapon/index.vue'
 export default{
     name: 'material',
     components: {
-        Life
+        Life,
+        Zongjiao,
+        Weapon
     },
     data(){
         return{

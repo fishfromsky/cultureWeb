@@ -11,7 +11,7 @@ import Wen from '@/components/Wen/index.vue'
 import NewsDetain from '@/components/Wen/components/detail.vue'
 import Decorate from '@/components/Decorate/index.vue'
 import Material from '@/components/Material/index.vue'
-import MaterialDetail from '@/components/Material/Life/Detail.vue'
+import MaterialDetail from '@/components/Material/Detail.vue'
 import Book from '@/components/Book/index.vue'
 import Register from '@/components/Register/index.vue'
 
@@ -45,8 +45,8 @@ const routes: Array<RouteConfig> = [
         component: Book
       },
       {
-        path: '/material/detail3',
-        name: 'material_detail3',
+        path: '/material/detail',
+        name: 'material_detail',
         component: MaterialDetail
       },
       {

@@ -1,5 +1,5 @@
 from django.views.decorators.http import require_http_methods
-from ...model_package.show.show_models import Show_Ji, Show_Wen, Wen_Table, Wen_Comment, Material_Detail
+from ...model_package.show.show_models import Show_Ji, Show_Wen, Wen_Table, Wen_Comment, Material_Detail, history
 from ...models import UserProfile
 from ...utils import to_dict
 from django.http import JsonResponse
@@ -90,16 +90,31 @@ def add_wen_comment(request):
 @require_http_methods(['GET'])
 def get_material_life_detail(request):
     response = {'code': 0, 'message': 'success'}
+    category = request.GET.get('category')
     material_id = request.GET.get('id')
-    details_count = Material_Detail.objects.filter(type_id=material_id).count()
+    details_count = Material_Detail.objects.filter(type_id=material_id, main_category=category).count()
+    response['data'] = []
     if details_count != 0:
         response['code'] = 1
-        details = Material_Detail.objects.get(type_id=material_id)
-        details = to_dict(details)
-        img_src = details['img']
-        img_list = img_src.split(',')
-        details['img'] = img_list
-        response['data'] = details
+        details = Material_Detail.objects.filter(type_id=material_id, main_category=category)
+        for d in details:
+            response['data'].append(to_dict(d))
     return JsonResponse(response)
+
+
+@require_http_methods(['GET'])
+def get_history_info(request):
+    response = {'code': 0, 'message': 'success'}
+    category = request.GET.get('id')
+    info = history.objects.get(type_id=category)
+    info = to_dict(info)
+    info['img'] = info['img'].split('|')
+    info['describe'] = info['describe'].split('|')
+    info['flag'] = info['flag'].split('|')
+    info['flag'] = [int(item) for item in info['flag']]
+    response['data'] = info
+    return JsonResponse(response)
+
+
 
 

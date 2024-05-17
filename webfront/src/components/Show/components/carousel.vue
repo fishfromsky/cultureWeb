@@ -7,13 +7,6 @@
         <el-carousel indicator-position="none" arrow="always" :autoplay="false" @change="handle_change">
             <el-carousel-item v-for="(item, idx) in card" :key="idx">
                 <img :src="item.src" style="width: 100%; height: 100%"/>
-                <div class="wen2" :style="{display: mydisplay}">
-                    <img :src="item.vice_src[1]" style="width: 100%; height: 100%;">
-                </div>
-                <div class="wen1" :style="{display: mydisplay}">
-                    <img :src="item.vice_src[0]" style="width: 100%; height: 100%">
-                </div>
-                <div class="click-circle" @click="wave_click"></div>
             </el-carousel-item>
             <div class="danmu">
                 <vueDanmaku v-if="danmu" class="danmu-inline" :danmus="comments" :channels="3" :loop="true" :top="20" :speeds="120"></vueDanmaku>
