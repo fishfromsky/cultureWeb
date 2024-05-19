@@ -15,6 +15,20 @@ class Goods(models.Model):
     category = models.ForeignKey(to='Categories', null=True, on_delete=models.SET_NULL)
 
 
+class GoodsInformation(models.Model):
+    good_id = models.ForeignKey(to='Goods', on_delete=models.CASCADE)
+    sizes = models.CharField(max_length=255, default='')
+    child_list = models.TextField(default='')
+    prices = models.CharField(max_length=255, default='')
+    describe = models.TextField(default='')
+
+
+class goodsComment(models.Model):
+    goods_id = models.ForeignKey(to='Goods', on_delete=models.CASCADE)
+    user = models.ForeignKey(to='UserProfile', on_delete=models.CASCADE)
+    comment = models.TextField(default='')
+    size = models.CharField(max_length=255, default='')
+
 class Express_Addresses(models.Model):
     user = models.ForeignKey(to='UserProfile', on_delete=models.CASCADE)
     address = models.CharField(max_length=255, default='')
@@ -26,5 +40,8 @@ class buy_record(models.Model):
     count = models.IntegerField(default=0)
     time = models.DateTimeField(auto_now_add=True)
     address = models.ForeignKey(to='Express_Addresses', null=True, on_delete=models.SET_NULL)
+
+
+
 
 

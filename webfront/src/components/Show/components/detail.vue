@@ -20,7 +20,7 @@
                             <el-col :span="14">
                                 <div class="fig-title">{{activity.fig_title}}</div>
                                 <div class="fig-container">
-                                    <img :src="activity.fig_src" style="width: 100%; height: 100%"/>
+                                    <img :src="activity.fig_src" style="width: 110%; height: 110%"/>
                                     <div class="mask">
                                         <div class="bottom-line">
                                             <div class="fig-button">

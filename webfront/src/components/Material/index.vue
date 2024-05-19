@@ -54,6 +54,10 @@ export default{
     flex-direction: row;
     height: 90vh;
     background-color: #131e3a;
+    background-image: url('../../assets/main_bg_yin.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     box-sizing: border-box;
     padding: 40px;
 }

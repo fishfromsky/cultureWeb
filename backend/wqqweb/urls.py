@@ -4,6 +4,9 @@ from django.conf.urls import url
 urlpatterns = [
     url('login', views.login),
     url('register', views.register),
+    url('get_address', views.get_addresses),  # 获取地址
+    url('get_user_info', views.get_username_info),  # 获取用户信息
+    url('modify_user_info', views.info_modify),  # 修改用户信息
 
     # 评论相关
     url('get_comments', views.comment_views.get_all_comments), # 获取评论
@@ -32,6 +35,8 @@ urlpatterns = [
     url('get_goods_categories', views.buy_views.get_categories),  # 获取商品种类
     url('get_workmans', views.buy_views.get_workman),  # 获取传承人信息
     url('get_goods_info', views.buy_views.get_goods_info),  # 获取商品详细信息
+    url('get_goods_detail', views.buy_views.get_goods_detail),  # 获取商品规格
+    url('get_pay_count', views.buy_views.get_pay_count),  # 获取购买数量
 
     url('get_show_ji', views.show_views.get_ji_content),  # 获取“技”页面所有信息
     url('get_show_content', views.show_views.get_wen_content),  # 获取“纹”页面信息

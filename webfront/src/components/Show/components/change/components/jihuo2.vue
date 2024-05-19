@@ -158,7 +158,8 @@ export default{
     transform: scale(1.1);
 }
 .main-content{
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
     text-align: center;
     position: absolute;
     top: 35vh;

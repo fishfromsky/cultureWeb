@@ -14,6 +14,7 @@ import Material from '@/components/Material/index.vue'
 import MaterialDetail from '@/components/Material/Detail.vue'
 import Book from '@/components/Book/index.vue'
 import Register from '@/components/Register/index.vue'
+import Info from '@/components/Info/index.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes: Array<RouteConfig> = [
         path: '/decorate',
         name: 'decorate',
         component: Decorate
+      },
+      {
+        path: '/info',
+        name: 'info',
+        component: Info
       },
       {
         path: '/material',

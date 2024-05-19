@@ -21,7 +21,7 @@
             <el-col :span="11">
                 <div class="name-list">
                     <div class="border" v-for="(item, idx) in people_list" :key="idx" :class="class_name[idx]">
-                        <div class="border-text-box" :class="text_class_name[idx]" @click="selectPeople(idx)">
+                        <div class="border-text-box" :class="text_class_name[idx]" @mouseover="selectPeople(idx)">
                             <div>{{ item.title }}&nbsp;&bull;&nbsp;{{ item.name }}</div>
                         </div>
                     </div>
@@ -47,16 +47,7 @@ export default{
     methods: {
         selectPeople(idx){
             this.selected = this.people_list[idx].id
-            this.people_list = []
-            for (let i=0; i<this.total_people.length; i++){
-                if (this.total_people[i].id != this.selected){
-                    this.people_list.push(this.total_people[i])
-                }
-                else{
-                    this.show_people = this.total_people[i]
-                    this.selected = this.total_people[i].id
-                }
-            }
+            this.show_people = this.total_people[idx]
         },
         showInfo(){
             this.$emit('showinfo', this.show_people.id)
@@ -68,10 +59,8 @@ export default{
             let people = res.data.data
             that.total_people = people
             for (let i=0; i<people.length; i++){
-                if (i != 0){
-                    that.people_list.push(people[i])
-                }
-                else{
+                that.people_list.push(people[i])
+                if (i == 0){
                     that.show_people = people[i]
                     that.selected = people[i].id
                 }
@@ -171,18 +160,18 @@ export default{
     color: #c89b49;
 }
 .border-text-pos1{
-    margin-top: 29vh;
+    margin-top: 27vh;
 }
 .border-text-pos2{
     margin-top: 21vh;
 }
 .border-text-pos3{
-    margin-top: 34.5vh;
+    margin-top: 36vh;
 }
 .border-text-pos4{
-    margin-top: 18vh;
+    margin-top: 15vh;
 }
 .border-text-pos5{
-    margin-top: 12vh;
+    margin-top: 13vh;
 }
 </style>

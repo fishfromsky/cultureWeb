@@ -1,6 +1,7 @@
 <template>
     <div class="woman-body">
-        <div class="img-box"></div>
+        <div class="img-box">
+        </div>
     </div>
 </template>
 
@@ -18,6 +19,7 @@ export default{
 <style scoped>
 .woman-body{
     width: 100%;
+    box-sizing: border-box;
 }
 .img-box{
     width: 100%;
@@ -25,6 +27,17 @@ export default{
     background-image: url('../../../assets/Wu/woman.png');
     background-position: -24vh center;
     background-repeat: no-repeat;
-    background-size: 110% 110%;
+    background-size: 120% 110%;
+    text-align: right;
+    box-sizing: border-box;
+}
+.text{
+    color: #fff;
+    font-size: 2vh;
+}
+.text-pos1{
+    position: absolute;
+    right: 21%;
+    top: 27.5vh
 }
 </style>

@@ -55,6 +55,10 @@ export default {
     min-height: 90vh;
     background-color: #131e3a;
     box-sizing: border-box;
+    background-image: url('../../assets/main_bg_people.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 </style>

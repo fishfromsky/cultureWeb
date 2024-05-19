@@ -13,6 +13,7 @@ class UserProfile(AbstractUser):
     district = models.CharField(max_length=255, default='')
     address = models.CharField(max_length=255, default='')
     sign = models.CharField(max_length=255, default='')
+    post_price = models.CharField(max_length=255, default='')
 
     def __str__(self):
         return self.username

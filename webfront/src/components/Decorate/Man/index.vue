@@ -22,6 +22,6 @@ export default{
     background-image: url('../../../assets/Wu/man.png');
     background-position: -24vh center;
     background-repeat: no-repeat;
-    background-size: 110% 110%;
+    background-size: 120% 110%;
 }
 </style>

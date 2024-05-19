@@ -11,7 +11,7 @@
           <el-input type="password" v-model="loginForm.password" autocomplete="current-password" placeholder="密码"></el-input>
         </el-form-item>
         <div class="password-item">
-          <el-checkbox v-model="checked">记住密码</el-checkbox>
+          <el-checkbox v-model="remember_passwd">记住密码</el-checkbox>
           <div class="forget">忘记密码</div>
         </div>
         <el-form-item>
@@ -40,6 +40,7 @@ export default {
         username: '',
         password: '',
       },
+      remember_passwd: false
     };
   },
   methods: {

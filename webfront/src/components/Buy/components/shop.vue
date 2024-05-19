@@ -35,7 +35,7 @@
         </div>
         <div class="main-shop">
             <div class="img-box" v-for="(item, idx) in goods_info" :key="idx">
-                <div class="img">
+                <div class="img" @click="select_goods(item)">
                     <img :src="item.src" style="width: 100%; height: 100%;" class="img-hover">
                 </div>
                 <div class="text-box">{{ item.name }}</div>
@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import Cookies from 'js-cookie'
 export default{
     name: 'shop',
     props: {
@@ -79,6 +80,15 @@ export default{
     methods: {
         search(){
             
+        },
+        select_goods(val){
+            let user_id = Cookies.get('user_id')
+            if (user_id == null){
+                this.$router.push({path: '/login'})
+            }
+            else{
+                this.$emit('selectGoods', val.id)
+            }
         },
         get_goods_num(){
             let that = this
@@ -227,11 +237,32 @@ export default{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 60vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.main-shop::-webkit-scrollbar {
+  width: 6px; /* 滚动条的宽度 */
+}
+
+.main-shop::-webkit-scrollbar-track {
+  background: transparent; /* 滚动条轨道的颜色 */
+}
+
+.main-shop::-webkit-scrollbar-thumb {
+  background-color: #fff; /* 滚动条本身的颜色 */
+  border-radius: 4px; /* 滚动条圆角 */
+}
+
+.main-shop::-webkit-scrollbar-thumb:hover {
+  background: #555; /* 滚动条鼠标悬停时的颜色 */
 }
 .img-box{
     width: 30%;
     min-height: 60vh;
+    margin-left: 20px;
 }
 .img{
     width: 100%;

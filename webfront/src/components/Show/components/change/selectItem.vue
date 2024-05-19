@@ -5,12 +5,6 @@
                 <div class="item-box item-bg"></div>
                 <div class="item-text">火把节</div>
             </div>
-            <div class="item-box-container">
-                <div class="item-box item-bg-text">
-                    <div class="item-text">敬请期待</div>
-                </div>
-                <div class="item-text">敬请期待</div>
-            </div>
         </div>
     </div>
 </template>
@@ -50,7 +44,7 @@ export default{
     align-items: center;
 }
 .item-box{
-    width: 35vh;
+    width: 70vh;
     height: 35vh;
     border: 1.5px solid #fff;
     border-radius: 5vh;
