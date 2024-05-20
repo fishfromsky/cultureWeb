@@ -9,7 +9,7 @@ import '@/assets/fonts/font.css'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
-axios.defaults.baseURL = 'http://120.27.144.206:8000'
+axios.defaults.baseURL = 'http://127.0.0.1:8000'
 Vue.prototype.$http = axios
 
 new Vue({

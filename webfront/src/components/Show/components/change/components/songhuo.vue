@@ -3,7 +3,7 @@
         <audio ref="audioPlayer" :src="audio_src"></audio>
         <div class="voice-item">
             <div v-loading="audioloading" class="voice-logo" @click="startAudio"></div>
-            <div class="text">点击开始聆听诵经送火</div>
+            <div class="text">点击开始聆听送火</div>
         </div>
         <div class="title-list">
             <div class="border-bg border-bg-left" style="margin-right: 10px;"></div>
